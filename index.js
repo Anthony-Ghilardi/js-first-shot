@@ -259,18 +259,18 @@ console.log(jerseyColors)
 
 // COUNTING TRAINS ACTIVITY STARTS HERE
 
-let newInventoryCarModels = ['S1', 'S1', 'S2', 'S1', 'S2', 'S1']
-let newInventoryCarTypes = ['StockCar', 'Refrigerator', 'StockCar', 'Lorrie', 'Lorrie', 'Lorrie']
-let newInventoryYearBuilt = [1922, 2011, 1975, 2002, 1965, 1951]
+// let newInventoryCarModels = ['S1', 'S1', 'S2', 'S1', 'S2', 'S1']
+// let newInventoryCarTypes = ['StockCar', 'Refrigerator', 'StockCar', 'Lorrie', 'Lorrie', 'Lorrie']
+// let newInventoryYearBuilt = [1922, 2011, 1975, 2002, 1965, 1951]
 
-let totalValue = 0
+// let totalValue = 0
 
-for(let i = 0; i < newInventoryYearBuilt.length; i++){
-    totalValue += (2022 - newInventoryYearBuilt[i])
-}
+// for(let i = 0; i < newInventoryYearBuilt.length; i++){
+//     totalValue += (2022 - newInventoryYearBuilt[i])
+// }
 
-let averageYear = (totalValue / newInventoryYearBuilt.length)
-console.log('Average age is ' + averageYear + ' years.')
+// let averageYear = (totalValue / newInventoryYearBuilt.length)
+// console.log('Average age is ' + averageYear + ' years.')
 
 
 
@@ -307,3 +307,303 @@ console.log('Average age is ' + averageYear + ' years.')
 
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// Array Iterators callback functions in action STARTS HERE
+
+//PART 1 STARTS -----------------------------------------------------------------------------------------------
+
+// og code to edit
+// let monthlyProfitLabels = [ 'January: 5', 'February: -1', 'March: 12' ]
+// let monthList = document.querySelector('.month-list')
+
+// for(let i = 0; i < monthlyProfitLabels.length; i++){
+//     let label = monthlyProfitLabels[i]
+//     let monthLi = document.createElement('li')
+//     monthLi.textContent = label
+//     monthList.append(monthLi)
+// }
+//og code to edit ends
+
+//new code 
+
+
+// let monthlyProfitLabels = [ 'January: 5', 'February: -1', 'March: 12' ]
+// let monthList = document.querySelector('.month-list')
+
+// monthlyProfitLabels.forEach(function(label){
+//     let monthLi = document.createElement('li')
+//     monthLi.textContent = label
+//     monthList.append(monthLi)
+// });
+
+
+//new code ends
+// PART 1 ENDS------------------------------------------------------------------------------------------------
+
+// PART 2 STARTS
+
+// let selectedMonths = [ 
+//     { name: 'January', revenue: 10, expenses: 5, quarter: 1 }, 
+//     { name: 'February', revenue: 7, expenses: 8, quarter: 1 }, 
+//     { name: 'March', revenue: 15, expenses: 3, quarter: 1 } 
+// ]
+
+// let monthlyProfitLabels = selectedMonths.map(function(month) {
+//     let label = `${month.name}: ${month.revenue - month.expenses}`
+//     return label
+//     });
+
+//     console.log(monthlyProfitLabels)
+
+// for(let i = 0; i < selectedMonths.length; i++){
+//     let month = selectedMonths[i]
+//     let label = `${month.name}: ${month.revenue - month.expenses}`
+//     monthlyProfitLabels.push(label)
+// }
+
+// console.log(monthlyProfitLabels)
+
+
+// PART 2 ENDS
+
+// Array Iterators callback functions in action ENDS HERE
+
+//------------------------------------------------------------------------------------------------------------
+
+// PART 3 STARTS 
+
+//OG CODE 
+// let allMonths = [ 
+//     { name: 'January', revenue: 10, expenses: 5, quarter: 1 }, 
+//     { name: 'February', revenue: 7, expenses: 8, quarter: 1 }, 
+//     { name: 'March', revenue: 15, expenses: 3, quarter: 1 } ,
+//     { name: 'April', revenue: 20, expenses: 18, quarter: 2 } ,
+//     { name: 'May', revenue: 25, expenses: 17, quarter: 2 } ,
+//     { name: 'June', revenue: 19, expenses: 18, quarter: 2 },
+//     { name: 'July', revenue: 20, expenses: 20, quarter: 3 } ,
+//     { name: 'August', revenue: 19, expenses: 20, quarter: 3 },
+//     { name: 'September', revenue: 21, expenses: 23, quarter: 3 },
+//     { name: 'October', revenue: 21, expenses: 20, quarter: 4 },
+//     { name: 'November', revenue: 21, expenses: 20, quarter: 4 },
+//     { name: 'December', revenue: 18, expenses: 20, quarter: 4 } 
+// ]
+
+// let selectedQuarter = 1
+// let selectedMonths = []
+// for(let i = 0; i < allMonths.length; i++){
+//     let month = allMonths[i]
+//     if(month.quarter === selectedQuarter){
+//         selectedMonths.push(month)
+//     }
+// }
+
+// console.log(selectedMonths)
+
+//NEW CODE STARTS 
+// let allMonths = [ 
+//     { name: 'January', revenue: 10, expenses: 5, quarter: 1 }, 
+//     { name: 'February', revenue: 7, expenses: 8, quarter: 1 }, 
+//     { name: 'March', revenue: 15, expenses: 3, quarter: 1 } ,
+//     { name: 'April', revenue: 20, expenses: 18, quarter: 2 } ,
+//     { name: 'May', revenue: 25, expenses: 17, quarter: 2 } ,
+//     { name: 'June', revenue: 19, expenses: 18, quarter: 2 },
+//     { name: 'July', revenue: 20, expenses: 20, quarter: 3 } ,
+//     { name: 'August', revenue: 19, expenses: 20, quarter: 3 },
+//     { name: 'September', revenue: 21, expenses: 23, quarter: 3 },
+//     { name: 'October', revenue: 21, expenses: 20, quarter: 4 },
+//     { name: 'November', revenue: 21, expenses: 20, quarter: 4 },
+//     { name: 'December', revenue: 18, expenses: 20, quarter: 4 } 
+// ]
+
+// let selectedQuarter = 1
+// let selectedMonths = allMonths.filter(function(month){
+//     return month.quarter === selectedQuarter
+// })
+
+// console.log(selectedMonths)
+// PART 3 ENDS
+
+//------------------------------------------------------------------------------------------------------------
+
+
+// PART 4 STARTS HERE 
+
+
+// let quarterDropdown = document.querySelector('.quarter-dropdown')
+
+// quarterDropdown.addEventListener('change', function(e){
+//     let quarter = parseInt(e.target.value)
+//     displayQuarter(quarter)
+// })
+
+// function displayQuarter(quarter){
+//     let selectedMonths = getSelectedMonths(quarter)
+//     let profitLabels = getProfitLabels(selectedMonths)
+//     renderLabels(profitLabels)
+// }
+
+// function getSelectedMonths(quarter){
+//     return allMonths.filter(function(month){
+//         return month.quarter === quarter
+//     })
+// }
+
+// function getProfitLabels(selectedMonths){
+//     return selectedMonths.map(function(month){
+//         return `${month.name}: ${month.revenue - month.expenses}`
+//     })
+// }
+
+// function renderLabels(profitLabels){
+//     let monthList = document.querySelector('.month-list')
+//     monthList.innerHTML = '' // This empties the list before we append new items to it.
+//     profitLabels.forEach(function(label){
+//         let monthLi = document.createElement('li')
+//         monthLi.textContent = label
+//         monthList.append(monthLi)
+//     })
+// }
+
+// let allMonths = [ 
+//     { name: 'January', revenue: 10, expenses: 5, quarter: 1 }, 
+//     { name: 'February', revenue: 7, expenses: 8, quarter: 1 }, 
+//     { name: 'March', revenue: 15, expenses: 3, quarter: 1 } ,
+//     { name: 'April', revenue: 20, expenses: 18, quarter: 2 } ,
+//     { name: 'May', revenue: 25, expenses: 17, quarter: 2 } ,
+//     { name: 'June', revenue: 19, expenses: 18, quarter: 2 },
+//     { name: 'July', revenue: 20, expenses: 20, quarter: 3 } ,
+//     { name: 'August', revenue: 19, expenses: 20, quarter: 3 },
+//     { name: 'September', revenue: 21, expenses: 23, quarter: 3 },
+//     { name: 'October', revenue: 21, expenses: 20, quarter: 4 },
+//     { name: 'November', revenue: 21, expenses: 20, quarter: 4 },
+//     { name: 'December', revenue: 18, expenses: 20, quarter: 4 } 
+// ]
+
+// displayQuarter(1)
+
+
+// PART 4 ENDS HERE
+
+// --------------------------------------------------------------------------------------------------------------
+
+
+// Activity (js-4-array-iterator-practice) starts here
+
+// question  1
+// let users = [
+//     { id: 1, firstName: 'Azami', lastName: 'Bazia', age: 18 },
+//     { id: 2, firstName: 'Elliot', lastName: 'Noor', age: 23 },
+//     { id: 3, firstName: 'Samir', lastName: 'Zahara', age: 7 },
+//     { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
+// ]
+
+
+// function getFirstNames(users){
+//     let firstName = users.map(function(user){
+//         return user.firstName;
+// });
+//     return firstName;
+// }
+    
+//     console.log(getFirstNames(users))
+// end question 1
+
+//question 2
+// let users = [
+//     { id: 1, firstName: 'Azami', lastName: 'Bazia', age: 18 },
+//     { id: 2, firstName: 'Elliot', lastName: 'Noor', age: 23 },
+//     { id: 3, firstName: 'Samir', lastName: 'Zahara', age: 7 },
+//     { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
+// ]
+
+// function getFullNames(users){
+//     let fullNames = users.map(function(user){
+//         return user.firstName + ' ' + user.lastName;
+//     });
+//     return fullNames;
+// }
+// console.log(getFullNames(users));
+
+//end question 2
+
+
+//question 3 start
+
+// let users = [
+//     { id: 1, firstName: 'Azami', lastName: 'Bazia', age: 18 },
+//     { id: 2, firstName: 'Elliot', lastName: 'Noor', age: 23 },
+//     { id: 3, firstName: 'Samir', lastName: 'Zahara', age: 7 },
+//     { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
+// ]
+
+// function getTeenagers(users){
+//     let age = users.filter(function(teenager){
+//         if(teenager.age >= 13 && teenager.age <= 18)
+//             return teenager;
+//     });
+//     return age;
+// }
+
+// console.log(getTeenagers(users))
+
+
+//question 3 ends
+
+
+// Question 4 starts 
+
+// let users = [
+//     { id: 1, firstName: 'Azami', lastName: 'Bazia', age: 18 },
+//     { id: 2, firstName: 'Elliot', lastName: 'Noor', age: 23 },
+//     { id: 3, firstName: 'Samir', lastName: 'Zahara', age: 7 },
+//     { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
+// ]
+
+// function getChildren(users){
+//     let age = users.filter(function(children){
+//         if(children.age <= 13)
+//         return children
+//     });
+//     return age
+// }
+
+// console.log(getChildren(users));
+
+
+// Question 4 ends
+
+// Question 5 starts 
+
+// let users = [
+//     { id: 1, firstName: 'Azami', lastName: 'Bazia', age: 18 },
+//     { id: 2, firstName: 'Elliot', lastName: 'Noor', age: 23 },
+//     { id: 3, firstName: 'Samir', lastName: 'Zahara', age: 7 },
+//     { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
+// ]
+// function getAges(users){
+//     let ages = users.map(function(user){
+//         return user.age
+// });
+//     return ages
+// }
+
+// console.log(getAges(users))
+
+// Question 5 ends
+
+
+// Question 6 starts 
+
+let users = [
+    { id: 1, firstName: 'Azami', lastName: 'Bazia', age: 18 },
+    { id: 2, firstName: 'Elliot', lastName: 'Noor', age: 23 },
+    { id: 3, firstName: 'Samir', lastName: 'Zahara', age: 7 },
+    { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
+]
+
+
+
+// Question 6 ends
+
+// Activity (js-4-array-iterator-practice) ends here
