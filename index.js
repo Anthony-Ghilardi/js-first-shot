@@ -1,3 +1,62 @@
+// Activity Code Review 1 types and objects STARTS 
+
+
+// let meats = ['beef', 'pork', 'chicken', 'ham', 'bacon,', 'filet'];
+// let vegetables = ['carrots', 'corn', 'lettuce', 'tomato'];
+// let desserts = ['pudding', 'icecream', 'brownie', 'cookie', 'pazookie'];
+
+
+// meats.pop();
+// vegetables.pop();
+// let dessert = desserts[3];
+
+// let mondayMenu = meats.concat(vegetables);
+//     mondayMenu.push(dessert);
+//      console.log("Monday's Menu: " + mondayMenu);
+
+
+// Activity Code Review 1 types and objects ENDS 
+
+
+// Rock Paper Scissors activity STARTS HERE
+
+let userSelection = prompt("rock, paper or scissors?"); 
+let computerSelection = getComputerSelection();                       
+
+
+function getComputerSelection() {
+let randomNumber = Math.floor(Math.random() *3) +1;
+if (randomNumber === 1) {
+  return 'rock';
+} else if (randomNumber === 2) {
+  return'paper';
+} else if (randomNumber === 3) {
+  return'scissors';
+} else {
+  console.log('Invalid selection');
+  return null;
+}
+}
+
+let compare=function(userSelection,computerSelection){
+    if(userSelection === computerSelection) {
+        return "It's a tie!";
+    } else if (
+        (userSelection === 'rock' && computerSelection === 'scissors') ||
+        (userSelection === 'paper' && computerSelection === 'rock') ||
+        (userSelection === 'scissors' && computerSelection === 'paper')
+    ) {
+        return "You win!";
+    } else {
+        return "Computer wins!";
+    }
+    
+}
+console.log(compare(userSelection,computerSelection));
+
+// Rock Paper Scissors activity ENDS HERE
+
+
 /* Arrays, declaring variables, console.log 
 // Day one start
 
