@@ -602,6 +602,19 @@ let users = [
     { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
 ]
 
+function getOldest(users){
+    let oldestUser = users[0]; // Initialize oldestUser with the first user
+    users.forEach(function(user){
+        // Inside the loop, compare the age of each user with oldestUser
+        if (user.age > oldestUser.age) {
+            oldestUser = user; // Update oldestUser if the current user is older
+        }
+    });
+    return oldestUser; // Return the oldest user
+}
+
+console.log(getOldest(users));
+
 
 
 // Question 6 ends
