@@ -18,43 +18,45 @@
 // Activity Code Review 1 types and objects ENDS 
 
 
-// Rock Paper Scissors activity STARTS HERE
-
-let userSelection = prompt("rock, paper or scissors?"); 
-let computerSelection = getComputerSelection();                       
+// ROCK PAPER SCISSORS ACTIVITY STARTS HERE
 
 
-function getComputerSelection() {
-let randomNumber = Math.floor(Math.random() *3) +1;
-if (randomNumber === 1) {
-  return 'rock';
-} else if (randomNumber === 2) {
-  return'paper';
-} else if (randomNumber === 3) {
-  return'scissors';
-} else {
-  console.log('Invalid selection');
-  return null;
-}
-}
+// let userSelection = prompt("rock, paper or scissors?"); 
+// let computerSelection = getComputerSelection();                       
 
-let compare=function(userSelection,computerSelection){
-    if(userSelection === computerSelection) {
-        return "It's a tie!";
-    } else if (
-        (userSelection === 'rock' && computerSelection === 'scissors') ||
-        (userSelection === 'paper' && computerSelection === 'rock') ||
-        (userSelection === 'scissors' && computerSelection === 'paper')
-    ) {
-        return "You win!";
-    } else {
-        return "Computer wins!";
-    }
+
+// function getComputerSelection() {
+// let randomNumber = Math.floor(Math.random() *3) +1;
+// if (randomNumber === 1) {
+//   return 'rock';
+// } else if (randomNumber === 2) {
+//   return'paper';
+// } else if (randomNumber === 3) {
+//   return'scissors';
+// } else {
+//   console.log('Invalid selection');
+//   return null;
+// }
+// }
+
+// let compare=function(userSelection,computerSelection){
+//     if(userSelection === computerSelection) {
+//         return "It's a tie!";
+//     } else if (
+//         (userSelection === 'rock' && computerSelection === 'scissors') ||
+//         (userSelection === 'paper' && computerSelection === 'rock') ||
+//         (userSelection === 'scissors' && computerSelection === 'paper')
+//     ) {
+//         return "You win!";
+//     } else {
+//         return "Computer wins!";
+//     }
     
-}
-console.log(compare(userSelection,computerSelection));
+// }
+// console.log(compare(userSelection,computerSelection));
 
-// Rock Paper Scissors activity ENDS HERE
+
+// ROCK PAPER SCISSORS ACTIVITY ENDS HERE
 
 
 /* Arrays, declaring variables, console.log 
@@ -250,3 +252,58 @@ console.log(jerseyColors)
 // ]
 
 // displayQuarter(1)
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// COUNTING TRAINS ACTIVITY STARTS HERE
+
+let newInventoryCarModels = ['S1', 'S1', 'S2', 'S1', 'S2', 'S1']
+let newInventoryCarTypes = ['StockCar', 'Refrigerator', 'StockCar', 'Lorrie', 'Lorrie', 'Lorrie']
+let newInventoryYearBuilt = [1922, 2011, 1975, 2002, 1965, 1951]
+
+let totalValue = 0
+
+for(let i = 0; i < newInventoryYearBuilt.length; i++){
+    totalValue += (2022 - newInventoryYearBuilt[i])
+}
+
+let averageYear = (totalValue / newInventoryYearBuilt.length)
+console.log('Average age is ' + averageYear + ' years.')
+
+
+
+
+
+// while loop that iterates newInventroyCarModels
+// let i = 0;
+// let typeS1Count = 0;
+// let lorrieCount = 0;
+
+
+// Uncomment code below to activate while loop
+// while(i < newInventoryCarModels.length) {
+//     if(newInventoryCarModels[i] === 'S1') {
+//         typeS1Count++;
+//     }
+//     i++
+// }
+//     console.log(`Number of S1 cars is: ${typeS1Count}`);
+
+// comment out code below to deactivate for loop
+// for(let i = 0; i < newInventoryCarModels.length; i++) {
+//         if(newInventoryCarTypes[i] === 'Lorrie') {
+//             lorrieCount++;
+//         } 
+//     }
+
+//     console.log(`Number of S1 cars is: ${typeS1Count}`);
+//     console.log(`Number of Lorrie cars is: ${lorrieCount}`);
+
+    
+
+// COUNTING TRAINS ACTIVITY ENDS HERE
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------
