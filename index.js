@@ -593,30 +593,166 @@ console.log(jerseyColors)
 // Question 5 ends
 
 
-// Question 6 starts 
+// Question 6 starts ASK FOR HELP
 
-let users = [
-    { id: 1, firstName: 'Azami', lastName: 'Bazia', age: 18 },
-    { id: 2, firstName: 'Elliot', lastName: 'Noor', age: 23 },
-    { id: 3, firstName: 'Samir', lastName: 'Zahara', age: 7 },
-    { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
-]
+// let users = [
+//     { id: 1, firstName: 'Azami', lastName: 'Bazia', age: 18 },
+//     { id: 2, firstName: 'Elliot', lastName: 'Noor', age: 23 },
+//     { id: 3, firstName: 'Samir', lastName: 'Zahara', age: 7 },
+//     { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
+// ]
 
-function getOldest(users){
-    let oldestUser = users[0]; // Initialize oldestUser with the first user
-    users.forEach(function(user){
-        // Inside the loop, compare the age of each user with oldestUser
-        if (user.age > oldestUser.age) {
-            oldestUser = user; // Update oldestUser if the current user is older
-        }
-    });
-    return oldestUser; // Return the oldest user
-}
+// function getOldest(users){
+//     let oldestUser = users[0]; 
+//     users.forEach(function(user){
+//         if (user.age > oldestUser.age) {
+//             oldestUser = user;
+//         }
+//     });
+//     return oldestUser;
+// }
 
-console.log(getOldest(users));
+// console.log(getOldest(users));
 
 
 
 // Question 6 ends
 
+// Question 7 starts 
+
+// function getFavoriteColorList(users){
+// 	let colors = users.map(function(userColor){
+//     	return userColor
+//     });
+//   return colors
+// }
+
+// console.log(getFavoriteColorList(users))
+
+// Question 7 ends
+
+// Question 8 starts 
+
+
+
+// Question 8 ends LEFT OFF HERE LEFT OFF HERE
+// let users = [
+//     { id: 1, firstName: 'Azami', lastName: 'Bazia', age: 18 },
+//     { id: 2, firstName: 'Elliot', lastName: 'Noor', age: 23 },
+//     { id: 3, firstName: 'Samir', lastName: 'Zahara', age: 7 },
+//     { id: 4, firstName: 'Idris', lastName: 'Christenson', age: 16 },
+// ]
+
+// function getInitials(users) {
+//     let initials = [];
+//     for (let user of users) {
+//         if (user.firstName.length > 0 && user.lastName.length > 0) {
+//             initials.push(`${user.firstName.charAt(0)}${user.lastName.charAt(0)}`);
+//         }
+//     }
+//     return initials;
+// }
+
+// let userInitials = getInitials(users);
+// for (let initial of userInitials) {
+//     console.log(`This person's initial is: '${initial}'`);
+// }
+
+
+
+/* Almost working code 
+
+function getInitials(users){
+    let initials = users.map(function(userInitials){
+        if(getInitials.length <= 1)
+        return userInitials
+    });
+    return initials
+}
+
+console.log(getInitials(users))*/
+
 // Activity (js-4-array-iterator-practice) ends here
+
+//-------------------------------------------------------------------------------------------------------------------------
+// Activity (js-4-using-the-this-keyword) STARTS HERE
+
+//Question 1 starts ask for help on this one 
+
+// function forEach(array, callback) {
+//     array.forEach(callback);
+// }
+
+// forEach([1, 2, 3], function(number) {
+//     console.log('iteration', number);
+// });
+
+// Question 1 ends
+
+// Question 2 starts 
+
+// let rectangle = {
+//     width: 100,
+//     height: 100, 
+//     area: function(){
+//         return this.width * this.height;
+//     }
+// }
+
+// console.log(rectangle.area())
+
+//question 2 ends
+
+// let dog = {
+//     sound: 'Arrrf!',
+//     playSound: function() {
+//         console.log(this.sound)
+//     }
+// }
+
+// let cat = {
+//     sound: 'Meoowww!',
+//     playsound: dog.playSound
+// }
+
+// cat.playSound()
+
+//Activity (js-4-using-the-this-keyword) ENDS HERE
+
+
+// CREATING AN OBJECT EXAMPLE VERY IMPORTANT 
+
+// this will be the car class
+class Car {
+    constructor (make, model, color) {
+        this.make = make;
+        this.model = model;
+        this.color = color;
+        
+    }
+}
+
+let newJag = new Car('Jaguar', 'Turbo XE', 'Black');
+let otherNewJag = new Car('Audi', 'A8', 'Midnight Green');
+let otherotherNewJag = new Car('Mazda', 'Speed 3', 'Blue Pearl Micah');
+
+console.log(newJag);
+console.log(otherNewJag);
+console.log(otherotherNewJag);
+console.log(typeof(newJag));
+
+// OBJECT EXAMPLE
+// TWO OBJECTS EVEN IF THEY ARE COMPLETELY IDENTICAL CAN NEVER === ONE ANOTHER TO BE TRUE
+
+let demoObject = {
+    make: 'Jaguar', 
+    model: 'Turbo Xe',
+    color: 'Black'
+}
+
+console.log(demoObject);
+console.log(typeof(demoObject));
+
+console.log(newJag === demoObject); 
+// should always return false as a single object is different from a class object
+// this would have to be duplicated over and over and over again this is  why class is used 
