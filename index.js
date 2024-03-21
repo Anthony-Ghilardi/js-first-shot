@@ -724,17 +724,26 @@ console.log(getInitials(users))*/
 
 // this will be the car class
 class Car {
-    constructor (make, model, color) {
+    constructor (make, model, color, driver = 'Unknown') {
         this.make = make;
         this.model = model;
         this.color = color;
+        this.driver = driver;
         
+    }
+    greet() {
+        console.log(`Hello, ${this.driver}!`)
     }
 }
 
-let newJag = new Car('Jaguar', 'Turbo XE', 'Black');
+// this keyword? YES
+// return keyword? 
+// parameter necessary? NOPE
+
+let newJag = new Car('Jaguar', 'Turbo XE', 'Black', 'Caleb');
 let otherNewJag = new Car('Audi', 'A8', 'Midnight Green');
 let otherotherNewJag = new Car('Mazda', 'Speed 3', 'Blue Pearl Micah');
+newJag.greet();
 
 console.log(newJag);
 console.log(otherNewJag);
