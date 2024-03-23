@@ -723,45 +723,45 @@ console.log(getInitials(users))*/
 // CREATING AN OBJECT EXAMPLE VERY IMPORTANT 
 
 // this will be the car class
-class Car {
-    constructor (make, model, color, driver = 'Unknown') {
-        this.make = make;
-        this.model = model;
-        this.color = color;
-        this.driver = driver;
+// class Car {
+//     constructor (make, model, color, driver = 'Unknown') {
+//         this.make = make;
+//         this.model = model;
+//         this.color = color;
+//         this.driver = driver;
         
-    }
-    greet() {
-        console.log(`Hello, ${this.driver}!`)
-    }
-}
+//     }
+//     greet() {
+//         console.log(`Hello, ${this.driver}!`)
+//     }
+// }
 
 // this keyword? YES
 // return keyword? 
 // parameter necessary? NOPE
 
-let newJag = new Car('Jaguar', 'Turbo XE', 'Black', 'Caleb');
-let otherNewJag = new Car('Audi', 'A8', 'Midnight Green');
-let otherotherNewJag = new Car('Mazda', 'Speed 3', 'Blue Pearl Micah');
-newJag.greet();
+// let newJag = new Car('Jaguar', 'Turbo XE', 'Black', 'Caleb');
+// let otherNewJag = new Car('Audi', 'A8', 'Midnight Green');
+// let otherotherNewJag = new Car('Mazda', 'Speed 3', 'Blue Pearl Micah');
+// newJag.greet();
 
-console.log(newJag);
-console.log(otherNewJag);
-console.log(otherotherNewJag);
-console.log(typeof(newJag));
+// console.log(newJag);
+// console.log(otherNewJag);
+// console.log(otherotherNewJag);
+// console.log(typeof(newJag));
 
 // OBJECT EXAMPLE
 // TWO OBJECTS EVEN IF THEY ARE COMPLETELY IDENTICAL CAN NEVER === ONE ANOTHER TO BE TRUE
 
-let demoObject = {
-    make: 'Jaguar', 
-    model: 'Turbo Xe',
-    color: 'Black'
-}
+// let demoObject = {
+//     make: 'Jaguar', 
+//     model: 'Turbo Xe',
+//     color: 'Black'
+// }
 
-console.log(demoObject);
-console.log(typeof(demoObject));
+// console.log(demoObject);
+// console.log(typeof(demoObject));
 
-console.log(newJag === demoObject); 
+// console.log(newJag === demoObject); 
 // should always return false as a single object is different from a class object
 // this would have to be duplicated over and over and over again this is  why class is used 
